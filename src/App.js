@@ -1,12 +1,17 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Count from './components/Count';
+import AppRouter from './components/AppRouter';
+import Header from './components/Header';
 
 
 
 function App() {
   return (
     <div>
-      <Count />
+      <BrowserRouter>
+        <Header />
+        <AppRouter />
+      </BrowserRouter>
     </div>
   );
 }
