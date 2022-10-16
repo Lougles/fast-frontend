@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { publicRoutes } from '../routes/routes'
-import Header from './Header'
 
 const AppRouter = () => {
   return (

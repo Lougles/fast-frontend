@@ -2,7 +2,7 @@
 
 
 const initialState = {
-  students: [],
+  students: [{id: 1, name: "vova"}, {id: 2, name: "Chelidze"}],
 }
 
 export const ADD_STUDENT = 'ADD_STUDENT'

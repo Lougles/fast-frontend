@@ -1,6 +1,6 @@
 import CountPage from '../components/CountPage'
 import StudentPage from '../components/StudentPage'
-import { COUNT_ROUTE, HOME, STUDENT_ROUTE } from '../utils/consts'
+import { COUNT_ROUTE, HOME, SEARCHING, STUDENT_ROUTE } from '../utils/consts'
 
 
 export const publicRoutes = [
@@ -15,5 +15,9 @@ export const publicRoutes = [
   {
     path: STUDENT_ROUTE,
     Component: StudentPage
-  }
+  },
+  {
+    path: SEARCHING,
+    Component: CountPage
+  },
 ]
