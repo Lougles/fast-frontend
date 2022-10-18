@@ -1,17 +1,31 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid';
+import { ADD_STUDENT_CREATOR } from '../store/studentReducer';
 
 const StudentPage = () => {
   const [input, setInput] = useState();
-  const {students} = useSelector(state => state.student)
+  const {students} = useSelector(state => state.student);
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     const input = form.elements.name.value;
-    console.log(input);
-    setInput({input}).onSubmit()
+    const user = {
+      id: uuidv4(),
+      name: input
+    }
+    dispatch(ADD_STUDENT_CREATOR(user));
     form.reset();
+  }
+  function AddStudent(name) {
+    const user = {
+      id: uuidv4(),
+      name: name
+    }
+    console.log(user);
+    dispatch(ADD_STUDENT_CREATOR(user));
   }
 
   return (
@@ -27,8 +41,7 @@ const StudentPage = () => {
         <input type='text' name='name'></input>
         <button type='submit'>Add Student</button>
       </form>
-      {/* <input value={input} onChange={(e)=> setInput(e.target.value)}></input>
-      <button>Add Student</button> */}
+      {/* <button onClick={() => AddStudent(prompt())}>TEST</button> */}
     </div>
   )
 }
